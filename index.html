@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sorgulama</title>
+</head>
+<body>
+
+<h2>Seri No Sorgula</h2>
+
+<input id="input" placeholder="Seri no yaz">
+<button onclick="ara()">Ara</button>
+
+<p id="sonuc"></p>
+
+<script>
+let data = [];
+
+fetch("data.json")
+  .then(r => r.json())
+  .then(d => data = d);
+
+function ara(){
+  let val = document.getElementById("input").value;
+
+  let item = data.find(x => x.seri_no == val);
+
+  if(item){
+    document.getElementById("sonuc").innerText =
+      item.urun + " - " + item.firma;
+  } else {
+    document.getElementById("sonuc").innerText = "Bulunamadı";
+  }
+}
+</script>
+
+</body>
+</html>
