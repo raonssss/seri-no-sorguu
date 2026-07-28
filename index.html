@@ -2,28 +2,10 @@
 <html>
 <body>
 
-<h2>Seri No</h2>
+<h2>TEST</h2>
 
 <input id="a">
-<button onclick="ara()">Ara</button>
-
-<p id="b"></p>
-
-<script>
-let data = [
-  {seri_no:"111", urun:"Maske", firma:"Tesa"},
-  {seri_no:"222", urun:"Eldiven", firma:"Tesa"}
-];
-
-function ara(){
-  let v = document.getElementById("a").value;
-
-  let f = data.find(x => x.seri_no == v);
-
-  document.getElementById("b").innerText =
-    f ? f.urun + " - " + f.firma : "Bulunamadı";
-}
-</script>
+<button onclick="alert('buton çalıştı')">TEST</button>
 
 </body>
 </html>
